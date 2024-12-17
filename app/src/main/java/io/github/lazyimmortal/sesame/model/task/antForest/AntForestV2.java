@@ -123,6 +123,7 @@ public class AntForestV2 extends ModelTask {
     @Getter
     private IntegerModelField doubleCountLimit;
     private BooleanModelField doubleCardConstant;
+    private BooleanModelField stealthCard;
     private ChoiceModelField stealthCardType;
     private BooleanModelField stealthCardConstant;
     private ChoiceModelField bubbleBoostType;
