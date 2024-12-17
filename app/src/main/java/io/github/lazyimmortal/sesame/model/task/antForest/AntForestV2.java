@@ -1385,7 +1385,6 @@ public class AntForestV2 extends ModelTask {
                     new JSONObject()
                             .put("stealthCardType", stealthCardType.getValue())
                             .put("stealthCardConstant", stealthCardConstant.getValue())
-                            .put("stealthCardTime", usingProps.get(PropGroup.stealthCard.name()))
             );
             jo.put("bubbleBoost",
                     new JSONObject()
@@ -1702,6 +1701,7 @@ public class AntForestV2 extends ModelTask {
             return;
         }
         if (needDoubleClick() || needStealthCard()) {
+        if (needDoubleClick()) {
             synchronized (usePropLockObj) {
                 JSONArray forestPropVOList = null;
                 if (needDoubleClick()) {
@@ -1713,6 +1713,7 @@ public class AntForestV2 extends ModelTask {
                         forestPropVOList = getForestPropVOList();
                     }
                     useStealthCard(forestPropVOList);
+                    useDoubleCard(getForestPropVOList());
                 }
             }
         }
